@@ -1,12 +1,12 @@
 import adapter from '@sveltejs/adapter-vercel';
-import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter()
-	},
-	preprocess: vitePreprocess()
+  kit: {
+    adapter: adapter({
+      runtime: 'nodejs20.x'  // <=== هذا السطر هو المفتاح
+    })
+  }
 };
 
 export default config;
